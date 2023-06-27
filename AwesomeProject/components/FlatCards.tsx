@@ -20,7 +20,8 @@ export default class FlatCards extends Component {
 const styles = StyleSheet.create({
     headingText:{
         fontSize:24,
-        paddingHorizontal:14
+        paddingHorizontal:14,
+        textAlign: 'center',
     },
     container:{
         display:'flex',
