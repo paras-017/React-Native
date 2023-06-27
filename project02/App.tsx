@@ -5,7 +5,10 @@ import React from 'react'
 import * as Yup from 'yup'
 
 const PasswordSchema = Yup.object().shape({
-  passwordLength: Yup.number().min(5,'Minimum length should be 5').max(20,'Maximum length should be 5').required('Length is required'),
+  passwordLength: Yup.number()
+                                             .min(5,'Minimum length should be 5')
+                                             .max(20,'Maximum length should be 5')
+                                             .required('Length is required'),
 })
 
 
