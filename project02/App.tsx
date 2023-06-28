@@ -21,7 +21,15 @@ const App = () => {
   const [setsymbols, setSetsymbols] = useState(false)
 
   const generatePasswordString = (passwordLength:number) => {}
-  const createPassword = (characters:string, passwordLength:number)=>{}
+
+  const createPassword = (characters:string, passwordLength:number)=>{
+    let result = ''
+    for(let i =0; i<passwordLength; i++){
+      const characterIndex = Math.round(Math.random() * characters.length)
+      result += characters[characterIndex]
+    }
+  }
+
   const resetPassword = () => {}
 
   return (
