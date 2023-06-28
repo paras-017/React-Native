@@ -11,8 +11,8 @@ const PasswordSchema = Yup.object().shape({
 })
 
 const App = () => {
-  const [password, setPassword] = useState('')
   const [isPassGenerated, setIsPassGenerated] = useState(false)
+  const [password, setPassword] = useState('')
   const [lowerCase, setLowerCase] = useState(true)
   const [upperCase, setUpperCase] = useState(false)
   const [numbers, setNumbers] = useState(false)
