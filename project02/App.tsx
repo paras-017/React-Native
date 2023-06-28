@@ -58,11 +58,11 @@ const App = () => {
         <Formik
             initialValues={{passwordLength: '' }}
             validationSchema = {PasswordSchema}
-            onSubmit = {(values)=>{
+            onSubmit = {values=>{
               console.log(values);
               generatePasswordString(+values.passwordLength)  //TODO
          }}>
-        {({values,errors,touched,isValid,handleChange,handleSubmit,handleReset,})  => (
+        {({values,errors,touched,isValid,handleChange,handleSubmit,handleReset})  => (
             <>
               <View style={styles.inputWrapper}>
                 <View style={styles.inputColumn}>
@@ -92,8 +92,8 @@ const App = () => {
     
 
               <View style={styles.formActions}>
-                <TouchableOpacity><Text>Generate Password</Text></TouchableOpacity>
-                <TouchableOpacity><Text>Reset</Text></TouchableOpacity>
+                <TouchableOpacity disabled={!isValid} style={styles.primaryBtn} onPress={()=>handleSubmit}><Text style={styles.primaryBtnTxt}>Generate Password</Text></TouchableOpacity>
+                <TouchableOpacity style={styles.primaryBtn} onPress={()=>{handleReset(); resetPassword()}}><Text style={styles.primaryBtnTxt}>Reset</Text></TouchableOpacity>
               </View>
             </>
         )}
