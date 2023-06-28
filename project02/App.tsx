@@ -4,10 +4,6 @@ import React, { useState } from 'react'
 //Form Validation
 import * as Yup from 'yup'
 
-// const PasswordSchema = Yup.object().shape({
-//   passwordLength: Yup.number().min(5,'Minimum length should be 5').max(20,'Maximum length should be 5').required('Length is required')
-// })
-
 const PasswordSchema = Yup.object().shape({
   passwordLength: Yup.number().min(5,'Minimum should be 5').max(20,'Maximum should be 5').required('Length is required')
 })
@@ -64,4 +60,6 @@ const App = () => {
 
 export default App
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  
+})
