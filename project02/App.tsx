@@ -32,6 +32,7 @@ const App = () => {
           
      const passwordResult = createPassword(characterList, passwordLength)
       setPassword(passwordResult)
+      setIsPassGenerated(true)
 
   }
   const createPassword = (characters:string, passwordLength:number)=>{
@@ -92,13 +93,20 @@ const App = () => {
     
 
               <View style={styles.formActions}>
-                <TouchableOpacity disabled={!isValid} style={styles.primaryBtn} onPress={()=>handleSubmit}><Text style={styles.primaryBtnTxt}>Generate Password</Text></TouchableOpacity>
+                <TouchableOpacity disabled={!isValid} style={styles.primaryBtn} onPress={()=>handleSubmit()}><Text style={styles.primaryBtnTxt}>Generate Password</Text></TouchableOpacity>
                 <TouchableOpacity style={styles.primaryBtn} onPress={()=>{handleReset(); resetPassword()}}><Text style={styles.primaryBtnTxt}>Reset</Text></TouchableOpacity>
               </View>
             </>
         )}
         </Formik>
       </View>
+      {isPassGenerated ? (
+      <View style={[styles.card, styles.cardElevated]}>
+        <Text style={styles.subTitle}>Result:</Text>
+        <Text style={styles.description}>Long Press to copy</Text>
+        <Text selectable style={styles.generatedPassword}>{password}</Text>
+      </View>
+        ):null}
     </ScrollView>
   )
 }
