@@ -56,4 +56,21 @@ class AppwriteService{
             console.log('Appwrite service :: loginAccount() :: ', error);
         }
     }
+    async getCurrentUser(){
+        try {
+            return await this.account.get()
+        } catch (error) {
+            console.log('Appwrite service :: getCurrentUser() :: ', error);
+        }
+    }
+    async logout(){
+        try {
+            // current --> it is the current session which is requesting to logout
+                return await this.account.deleteSession('current')
+            } catch (error) {
+                console.log('Appwrite service :: logout() :: ', error);
+            }
+    }
 }
+
+export default  AppwriteService
