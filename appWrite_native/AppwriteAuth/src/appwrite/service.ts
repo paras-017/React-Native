@@ -23,10 +23,7 @@ class AppwriteService{
     account;
     constructor(){
         //connecting to Appwrite
-        appwriteClient
-                    .setEndpoint(APPWRITE_ENDPOINT)
-                    .setProject(APPWRITE_PROJECT_ID)
-
+        appwriteClient.setEndpoint(APPWRITE_ENDPOINT).setProject(APPWRITE_PROJECT_ID)
         this.account = new Account(appwriteClient)
         }
     //create a new record of user inside appwrite
