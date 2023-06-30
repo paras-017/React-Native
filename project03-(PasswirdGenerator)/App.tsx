@@ -7,10 +7,10 @@ import { Form, Formik } from 'formik'
 import BouncyCheckbox from 'react-native-bouncy-checkbox'
 
 const PasswordSchema = Yup.object().shape({
-  passwordLength: Yup.number().min(5,'Minimum should be 5').max(20,'Maximum should be 5').required('Length is required')
+  passwordLength: Yup.number().min(5,'Minimum length should be 5').max(20,'Maximum length should be 20').required('Length is required')
 })
 
-const App = () => {
+const App = () => {   
   const [password, setPassword] = useState('')
   const [isPassGenerated, setIsPassGenerated] = useState(false)
   const [lowerCase, setLowerCase] = useState(true)
@@ -54,7 +54,7 @@ const App = () => {
 
   return (
     <ScrollView keyboardShouldPersistTaps='handled'>
-      <SafeAreaView style={styles.appContainer}></SafeAreaView>
+      <SafeAreaView style={styles.appContainer}>
       <View style={styles.formContainer}>
         <Formik
             initialValues={{passwordLength: '' }}
@@ -72,7 +72,8 @@ const App = () => {
                       <Text style={styles.errorText}>{errors.passwordLength}</Text>
                     )}
                 </View>
-                  <TextInput style={styles.inputStyle} value={values.passwordLength} onChangeText={handleChange('passwordLength')} placeholder='Ex. 8' keyboardType='numeric'/>
+                {/* handleChange takes string as an argument */}
+                  <TextInput style={styles.inputStyle} value={values.passwordLength} onChangeText={handleChange('passwordLength')}   placeholder='Ex. 8' keyboardType='numeric'/>
               </View>
               <View style={styles.inputWrapper}>
                 <Text style={styles.heading}>Include LowerCase</Text>
@@ -93,6 +94,7 @@ const App = () => {
     
 
               <View style={styles.formActions}>
+{/*  Onpress is collecting all the data and sending to the handleSubmit and on handlesubmit  will acutally call onSubmit*/}
                 <TouchableOpacity disabled={!isValid} style={styles.primaryBtn} onPress={()=>handleSubmit()}><Text style={styles.primaryBtnTxt}>Generate Password</Text></TouchableOpacity>
                 <TouchableOpacity style={styles.primaryBtn} onPress={()=>{handleReset(); resetPassword()}}><Text style={styles.primaryBtnTxt}>Reset</Text></TouchableOpacity>
               </View>
@@ -107,6 +109,7 @@ const App = () => {
         <Text selectable style={styles.generatedPassword}>{password}</Text>
       </View>
         ):null}
+        </SafeAreaView>
     </ScrollView>
   )
 }
