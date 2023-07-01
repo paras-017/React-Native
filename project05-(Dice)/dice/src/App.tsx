@@ -1,15 +1,18 @@
 import { Image, ImageSourcePropType, Pressable, StyleSheet,Text,TouchableOpacity,View } from 'react-native'
 import React, { PropsWithChildren, useState } from 'react'
-
 import ReactNativeHapticFeedback from "react-native-haptic-feedback";
-// import { trigger } from "react-native-haptic-feedback";
-
 import DiceOne from '../assets/one.png'
 import Dicetwo from '../assets/two.png'
 import DiceThree from '../assets/three.png'
 import DiceFour from '../assets/four.png'
 import DiceFive from '../assets/five.png'
 import DiceSix from '../assets/six.png'
+
+//heptic feedback
+const options = {
+  enableVibrateFallback: true,
+  ignoreAndroidSystemSettings: false,
+};
 
 // we are restricting the type of  imageUrl just in case  the provided url is image url not some text,html based url
 type imageUrlProps = PropsWithChildren<{
@@ -23,11 +26,6 @@ const Dice = ({imageUrl}:imageUrlProps):JSX.Element => {
   </View>
  )
 }
-//heptic feedback
-const options = {
-  enableVibrateFallback: true,
-  ignoreAndroidSystemSettings: false,
-};
 
 const App = () => {
 
