@@ -22,15 +22,17 @@ export default CurrencyButton
 const styles = StyleSheet.create({
   buttonContainer:{
     alignItems: 'center',
+    
   },
   flag:{
     fontSize:28,
     color:'#ffffff',
-    marginBottom:4
+    marginBottom:2
   },
   country:{
-    fontSize:18,
+    fontSize:14,
     color:'#2d3436',
-    marginBottom:4
+    marginBottom:4,
+    
   }
 })
