@@ -1,4 +1,4 @@
-import { FlatList, Pressable, SafeAreaView, StyleSheet, Text, TextInput, View } from 'react-native'
+import { FlatList, Pressable, StyleSheet, Text, TextInput, View } from 'react-native'
 import Snackbar from 'react-native-snackbar';
 import {currencyByRupee} from './constants'               //constants
 import React, { useState } from 'react'
