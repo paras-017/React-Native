@@ -7,7 +7,7 @@ import Details from './screens/Details';
 
 export type RootStackParamList = {
   Home: undefined;
-  Details:{productId:string}
+  Details:{productId:string}  | undefined;
 };
 // we ahave multiple type fo navigator such as Stack, Drawer  we are explicitly mentioning that I want to use the stack Navigator but as I'll move on to different screen these screen may expect some data to be passed on to him.These data what type of data that they can expect ? that's why  we have created this RootStackParamList
 const Stack = createNativeStackNavigator<RootStackParamList>()
