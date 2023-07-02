@@ -7,6 +7,7 @@ import { RootStackParamList } from '../App'
 
 type DetailsProps = NativeStackScreenProps<RootStackParamList, "Details">
 
+//we are able to destructure route because of  of stack.Navigator provided in App.tsx 
 const Details = ({route}: DetailsProps) => {
   const {product} = route.params
   return (

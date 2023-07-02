@@ -19,6 +19,7 @@ const App = () => {
   return (
     // NavigationContainer is a component that serves as the entry point for navigation in a RN application. It is responsible for managing the navigation tree and providing the navigation functionality to the rest of the application.
    <NavigationContainer>
+    {/* The navigator packages  export  navigation and route props from the corresponding navigator to each of its children screen*/}
     <Stack.Navigator initialRouteName='Home'>
           <Stack.Screen name="Home" component={Home} options={{title:'Trending Products'}}/>
           <Stack.Screen name="Details" component={Details} options={{title:'Produts Details'}} />
