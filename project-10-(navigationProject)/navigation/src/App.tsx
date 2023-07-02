@@ -7,11 +7,12 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack'
 import Home from './screens/Home'
 import Details from './screens/Details'
 
+// A "RootStackParamList" is a TypeScript type that defines the available screen names and their respective parameters in a navigation stack.
 export type RootStackParamList = {
-  Home:undefined,
-  Details:{product:Product}
-}
-//here we are creating our stack navigator in which we're deciding what screen will get what type of data
+  Home:undefined,                         //Home does't expect any parameters
+  Details:{product:Product}                       //Details  expect  parameter product
+} 
+//here we are creating our stack navigator in which we're deciding what screen will get what type of data using RootStackParamList
 const Stack = createNativeStackNavigator<RootStackParamList>()
 
 const App = () => {
