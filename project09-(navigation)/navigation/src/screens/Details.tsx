@@ -3,16 +3,14 @@ import React from 'react'
 import { RootStackParamList } from '../App'
 import { NativeStackScreenProps } from '@react-navigation/native-stack'
 
-//method 2 to accepting prop
 import { useNavigation } from '@react-navigation/native'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack/lib/typescript/src/types'
 
 
 type DetailsProps = NativeStackScreenProps<RootStackParamList,'Details'>
 
-const Details = ({route}:DetailsProps) => {
-  const {productId} = route.params
-   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>()
+const Details = ({navigation,route}:DetailsProps) => {
+  const {productId}  = route.params
   return (
     <View style={styles.container}>
       {/* <Text style={styles.smallText}>heeeello</Text> */}

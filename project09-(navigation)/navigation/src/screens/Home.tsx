@@ -1,12 +1,10 @@
-import { Button, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-
+import { Button, StyleSheet, Text, View } from 'react-native'
 import { NativeStackScreenProps } from '@react-navigation/native-stack'
 import { RootStackParamList } from '../App'
 
 type HomeProps = NativeStackScreenProps<RootStackParamList, 'Home'>
 
-//if you don't want to use navigation prop like this, you can use by another method  given in Detail.tsx
 const Home = ({navigation}:HomeProps) => {
   return (
     <View style={styles.container}>
