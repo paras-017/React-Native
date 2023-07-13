@@ -10,11 +10,7 @@ type ProductItemProps = PropsWithChildren<{
 const ProductItem = ({product}:ProductItemProps) => {
   return (
     <View style={styles.container}>
-      <Image 
-      source={{uri: product.imageUrl}}
-      style={styles.image}
-      />
-
+      <Image  source={{uri: product.imageUrl}} style={styles.image}/>
       <View>
         <Text style={styles.name}>{product.name}</Text>
 
