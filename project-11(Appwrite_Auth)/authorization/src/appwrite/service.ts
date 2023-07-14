@@ -2,7 +2,7 @@ import { ID, Account, Client} from 'appwrite'
 import Config from 'react-native-config'
 import Snackbar from 'react-native-snackbar'
 
-const appwriteClient = new Client()
+const client = new Client()
 
 const APPWRITE_ENDPOINTS: string = Config.APPRWRITE_ENDPOINTS!
 const APPWRITE_PROJECT_ID: string = Config.APPRWRITE_PROJECT_ID!
@@ -19,11 +19,11 @@ type LoginUserAccount = {
 }
 
 //creating a service
-class AppwriteService{
+class Appwrite{
     account;
     constructor(){
-        appwriteClient.setEndpoint(APPWRITE_ENDPOINTS).setProject(APPWRITE_PROJECT_ID)
-        this.account = new Account(appwriteClient)
+        client.setEndpoint(APPWRITE_ENDPOINTS).setProject(APPWRITE_PROJECT_ID)
+        this.account = new Account(client)
     }
     async createAccount({email, password, name}:CreateUserAccount){
         try {
@@ -68,4 +68,4 @@ class AppwriteService{
     }
 }
 
-export default AppwriteService
+export default Appwrite
